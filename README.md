@@ -10,7 +10,8 @@ O sistema permite:
 - chamar pacientes para consulta;
 - listar as filas;
 - verificar o próximo paciente em cada fila;
-- gerar relatório de atendimentos.
+- gerar relatório de atendimentos;
+- demonstrar o uso de métodos de fila que lançam exceção.
 
 ## Estrutura do projeto
 
@@ -19,8 +20,7 @@ QUEUE/
 ├── src/
 │   ├── Main.java
 │   ├── Paciente.java
-│   ├── ServicoClinica.java
-│   └── TesteClinica.java
+│   └── ServicoClinica.java
 ├── README.md
 ├── TESTES_REALIZADOS.md
 └── .gitignore
@@ -29,7 +29,7 @@ QUEUE/
 ## Requisitos
 
 - Java JDK 17 ou superior
-- Ambiente com terminal/PowerShell
+- Ambiente com terminal ou PowerShell
 
 ## Como executar
 
@@ -52,27 +52,38 @@ java -cp .\src Main
 1 - Retirar senha
 2 - Chamar próximo na recepção (Fila 1 -> Fila 2)
 3 - Chamar próximo para consulta
-4 - Listar fila de atendimento
-5 - Listar fila de consultas
+4 - Ver fila de atendimento
+5 - Ver fila de consultas
 6 - Ver próximo de cada fila (peek)
-7 - Relatório
+7 - Ver relatório
+8 - Testar exceções
 0 - Sair
 ```
 
-## Como executar os testes
+## Funcionalidades principais
 
-```powershell
-javac .\src\*.java
-java -cp .\src TesteClinica
+- Cadastro de pacientes com nome, CPF e prioridade.
+- Emissão de senha para a fila de atendimento.
+- Encaminhamento da fila de recepção para a fila de consultas.
+- Atendimento médico e registro dos tempos de espera.
+- Relatório com quantidade de pacientes em fila e tempo médio de espera.
+- Tratamento de exceções em filas vazias.
+
+## Testes
+
+O registro dos testes executados está disponível em:
+
+```text
+TESTES_REALIZADOS.md
 ```
 
 ## Observações
 
 - A fila de atendimento representa a recepção.
-- A fila de consultas representa a espera para a consulta médica.
+- A fila de consultas representa a espera para o atendimento médico.
 - Pacientes prioritários têm preferência no atendimento.
-- O sistema também possui tratamento para exceções de fila vazia.
+- A estrutura foi desenvolvida com foco em listas e filas em Java.
 
 ## Autor
 
-Projeto desenvolvido para estudo de filas em Java.
+Projeto desenvolvido para estudo de filas e estrutura de dados em Java.
